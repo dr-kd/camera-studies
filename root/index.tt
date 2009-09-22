@@ -1,0 +1,57 @@
+ <body>
+ <div class="main gridlines">
+ <div class="clear"></div>
+ <div class="ml5 mr5 clearfix"><h1 style="margin-top:1em; text-align:center"> Search Curriculum Map</h1> </div>
+ <div class="dr1">&nbsp;</div>
+ <div  class="dl1">&nbsp;</div>
+ <div class="ml5 fluid mr5">
+  [% IF error %]
+ <p class="error"> c.stash.error goes here.  We define the error style in our
+ local css file</p>
+ [% END %]
+
+ <h2> <span style="font-variant: small-caps">Step 1:</span>  Upload Data </h2>
+ <p> [% message %] </p>
+ <p>
+<form method='POST' enctype='multipart/form-data' name='sheet' action='[% c.uri_for('get_sheet') %]'>
+Spreadsheet to query: <input type='file' name='xls'>
+<input type='submit' value='Upload'>
+</form>
+<br /></p>
+ <h2><span style="font-variant: small-caps">Step 2:</span> Search Spreadsheet</h2>
+<form id="someform" method="GET">
+   <fieldset id="mainField">
+      <p> <label for="term">Search Term</label> <em>*</em><input id="search" name="search" size="25" /> </p>
+   </fieldset>
+   
+   <p>
+   <input type="radio" name="limit" value="1" checked="checked">Search for any words (OR) </input>
+   <input type="radio" name="limit" value="0" /> Search for all words (AND)</input><br />
+   <input type="button" id="addTerm" value="Add Another Search Term">
+   </p>
+   
+   <input type="submit" name = "search_form" value="Search">
+</form>
+ <p>
+[% IF c.req.params.search_form; %]      
+ [% FOREACH sheet IN data %]
+ <h3> <span style="font-variant: small-caps"> Worksheet</span>: [% sheet.key %] </h3>
+ <table class="stripeMe">
+[% FOREACH row IN sheet.value -%]
+[% IF loop.index == 0 -%]
+ <tr> [% FOREACH i IN row %]  <th> [% i %] </th>[% END %]  </tr>
+ [% ELSE -%]
+ <tr> [% FOREACH i IN row %]  <td> [% i %] </td>[% END %]  </tr> 
+ [% END;
+   END %]
+</table>
+[%  %]
+
+ [% END; END %]
+ </p>
+ <div class="hp oldbook tc">
+ <hr />
+ <a href="[% c.uri_for('quit') %]" onClick="return confirm('This will terminate your session. Are you sure?')">Quit</a>
+
+</div>
+</div>

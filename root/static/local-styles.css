@@ -1,0 +1,32 @@
+table {
+	border-width: thin thin thin thin;
+	border-spacing: 3px;
+	border-style: solid solid solid solid;
+	border-color: black black black black;
+	border-collapse: collapse;
+	background-color: white;
+}
+table th {
+	border-width: 2px 2px 2px 2px;
+	padding: 3px 3px 3px 3px;
+	border-style: solid solid solid solid;
+	border-color: blue blue blue blue;
+	background-color: #ccc;
+	-moz-border-radius: 3px 3px 3px 3px;
+}
+table td {
+	border-width: 2px 2px 2px 2px;
+	padding: 3px 3px 3px 3px;
+	border-style: solid solid solid solid;
+	border-color: blue blue blue blue;
+	background-color: white;
+	-moz-border-radius: 3px 3px 3px 3px;
+}
+tr.alt td {
+	background: #ecf6fc;
+}
+tr.over td {
+	background: #bcd4ec;
+}
+
+</style>
