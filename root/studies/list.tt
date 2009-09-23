@@ -1,0 +1,28 @@
+<h1> List of all studies </h1>
+<p>
+Other tables in database: [% FOREACH cont IN controllers %]
+<a href="[% c.uri_for("/$cont") %]"> [% cont %] </a>
+[% END %]
+</p>
+<p><a href="[% c.uri_for('create') %]">Create [% namespace %]  </a></p> 
+[% cols = studies.result_source.columns; pk = cols.shift %]
+<p>
+<table>
+<tr>
+[% FOREACH col IN cols %]
+<th>[% col %] </th>
+[% END %]
+<th>edit</th>
+</tr>
+[% WHILE (s = studies.next) %]
+[% FOREACH col IN cols  %]
+<td>[% s.$col %] </td>
+[% END %]
+<td> <a href="[% c.uri_for(  s.id, 'edit') %]">edit</a><br>
+<a href="[% c.uri_for( s.id, 'delete') %]">delete</a>
+</td>
+</tr>
+[% END %]
+</table>
+<a href="[% c.uri_for('/add') %]">Add new study</a>
+<a href="[% c.uri_for('import') %]">Import from CSV</a>

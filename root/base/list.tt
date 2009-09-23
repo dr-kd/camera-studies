@@ -1,0 +1,23 @@
+[% cols = studies.result_source.columns %]
+[% USE dumper; dumper.dump_html(namespace) %]
+[% IF ! studies  %] <h2> No records found! </h2> [% END %]
+<p><a href="[% c.uri_for('add') %]">Create [% namespace %]  </a> &nbsp;
+<a href="[% c.uri_for('import') %]">Import from CSV</a>
+</p> 
+<table>
+<tr>
+[% FOREACH c IN cols; next IF c == 'id' %]
+<th> [% labels.$c %]</th>
+[% END %]
+<th></th>
+</tr>
+[% WHILE (s = studies.next) %]
+<tr>
+[% FOREACH c IN cols ; next IF c == 'id' %] <td> [% s.$c %] </td> [% END %]
+<td><a href="[% c.uri_for('/') _ namespace _ '/' _ s.id _ '/' _ 'edit' %]">edit</a><br>
+<td> <a href="[% c.uri_for('/') _ namespace _ '/' _ s.id _ '/' _ 'delete' %]">delete</a><br>
+
+</td>
+</tr>
+[% END %]
+</table>

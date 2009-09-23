@@ -1,0 +1,57 @@
+<h2> [% namespace %] </h2>
+<form name="up" action="[% c.uri_for(s.id, 'do_edit') %]" method="post">
+<table>
+<tr>
+<td>[% labels.citat %] </td>
+<td><input type="text" name="citat" value="[% s.citat %]" /></td>
+</tr>
+<tr>
+<td>[% labels.auth_c %] </td>
+<td><input type="text" name="auth_c" value="[% s.auth_c %]" /> </td>
+</tr>
+<tr>
+<td>[% labels.year %] </td>
+<td><input type="text" name="year" value="[% s.year %]" /> </td>
+</tr>
+<tr>
+<td>[% labels.auth_all %] </td>
+<td><input type="text" name="auth_all" value="[% s.auth_all %]" /> </td>
+</tr>
+<tr>
+<td>[% labels.link %] </td>
+<td><input type="text" name="link" value="[% s.link %]" /><br /><a href="[% s.link %]">link</a> </td>
+</tr>
+<tr>
+<td>[% labels.title %] </td>
+<td><input type="text" name="title" value="[% s.title %]" /> </td>
+</tr>
+<tr>
+<td>[% labels.journ %] </td>
+<td><input type="text" name="journ" value="[% s.journ %]" /> </td>
+</tr>
+<tr>
+<td>[% labels.publ %] </td>
+<td><input type="text" name="publ" value="[% s.publ %]" /> </td>
+</tr>
+<tr>
+<td>[% labels.vol %] </td>
+<td><input type="text" name="vol" value="[% s.vol %]" /> </td>
+</tr>
+<tr>
+<td>[% labels.issu %] </td>
+<td><input type="text" name="issu" value="[% s.issu %]" /> </td>
+</tr>
+<tr>
+<td>[% labels.page %] </td>
+<td><input type="text" name="page" value="[% s.page %]" /> </td>
+</tr>
+<td>[% labels.abst %] </td>
+<td><textarea name="abst" rows='5' cols=72>[% s.abst %]</textarea> </td>
+</tr>
+<tr>
+<td></td>
+<td> <input type="submit" value="submit">
+</tr>
+<tr>
+</table>
+</form>
