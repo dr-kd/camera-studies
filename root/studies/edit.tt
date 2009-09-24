@@ -50,15 +50,15 @@
 <td>[% labels.abst %] </td>
 <td><textarea name="abst" rows='5' cols=72>[% s.abst %]</textarea> </td>
 </tr>
-<tr><td>Details</td><td> [% do_details(details) %] </tr>
-<tr><td>Species</td><td> [% do_details(species) %] </td> </tr>
-<tr><td>Placement</td><td> [% do_details(placement) %]  </td> </tr>
-<tr><td>Field</td><td> [% do_details(field) %] </td> </tr>
-<tr><td>Design</td><td> [% do_details(design) %] </td> </tr>
-<tr><td>Camera</td><td> [% do_details(camera) %]studies_camera m2m </td> </tr>
-<tr><td>Analysis</td><td> [% do_details(analy) %]studies_analy m2m </td> </tr>
+<tr><td><a href="[% c.uri_for('/studydetails') %]" target="_BLANK" >Details</a></td><td> [% do_details(details) %] </tr>
+<tr><td><a href="[% c.uri_for('/species') %]" target="_BLANK" >Species</a></td><td> [% do_details(species) %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/placement') %]" target="_BLANK">Placement</a></td><td> [% do_details(placement) %]  </td> </tr>
+<tr><td><a href="[% c.uri_for('/field') %]" target="_BLANK">Field<a/></td><td> [% do_details(field) %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/design') %]" target="_BLANK">Design</a></td><td> [% do_details(design) %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/camera') %]" target="_BLANK">Camera</a></td><td> [% do_details(camera) %]</td> </tr>
+<tr><td><a href="[% c.uri_for('/analy') %]" target="_BLANK">Analysis</a></td><td> [% do_details(analy) %]</td> </tr>
 <tr><td>Results</td><td> [% do_details(results) %]</td> </tr>
-<tr><td>Extra</td><td> [% do_details(extra) %]</td> </tr>
+<tr><td>Extra</td><td> [% do_details(extras) %]</td> </tr>
 <tr>
 <td></td>
 <td> <input type="submit" value="submit">
