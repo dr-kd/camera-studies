@@ -1,3 +1,4 @@
+[% PROCESS studies/macros.tt %]
 <h1> [% c.uri_for('/') %]
 <h2> [% namespace %] </h2>
 <form name="up" action="[% c.uri_for(s.id, 'do_edit') %]" method="post">
@@ -49,15 +50,15 @@
 <td>[% labels.abst %] </td>
 <td><textarea name="abst" rows='5' cols=72>[% s.abst %]</textarea> </td>
 </tr>
-<tr><td></td><td> studies_details m2m</td> </tr>
-<tr><td></td><td> studies_species m2m</td> </tr>
-<tr><td></td><td> studies_placement m2m</td> </tr>
-<tr><td></td><td> studies_field m2m </td> </tr>
-<tr><td></td><td> studies_design m2m </td> </tr>
-<tr><td></td><td> studies_camera m2m </td> </tr>
-<tr><td></td><td> studies_analy m2m </td> </tr>
-<tr><td></td><td> results 12m</td> </tr>
-<tr><td></td><td> extra 12m</td> </tr>
+<tr><td>Details</td><td> [% do_details(details) %] </tr>
+<tr><td>Species</td><td> [% do_details(species) %] </td> </tr>
+<tr><td>Placement</td><td> [% do_details(placement) %]  </td> </tr>
+<tr><td>Field</td><td> [% do_details(field) %] </td> </tr>
+<tr><td>Design</td><td> [% do_details(design) %] </td> </tr>
+<tr><td>Camera</td><td> [% do_details(camera) %]studies_camera m2m </td> </tr>
+<tr><td>Analysis</td><td> [% do_details(analy) %]studies_analy m2m </td> </tr>
+<tr><td>Results</td><td> [% do_details(results) %]</td> </tr>
+<tr><td>Extra</td><td> [% do_details(extra) %]</td> </tr>
 <tr>
 <td></td>
 <td> <input type="submit" value="submit">

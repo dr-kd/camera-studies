@@ -14,7 +14,7 @@ use Catalyst qw/-Debug
 our $VERSION = '0.01';
 
 __PACKAGE__->config( name => 'DataEntry' );
-
+__PACKAGE__->config->{static}->{ignore_extensions} = [ ];
 # Start the application
 __PACKAGE__->setup();
 
