@@ -1,0 +1,9 @@
+[% MACRO do_details(view) BLOCK;
+cols = view.result_source.columns; %]
+<table>
+<tr>
+[% FOREACH col IN cols %]
+    <td> [% col %] </td>
+[% END %]</tr>
+</table>
+[% END %]
