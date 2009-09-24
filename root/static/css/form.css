@@ -55,7 +55,7 @@ select
 	{  background-color: #fff; color: #000; }
 
 input[type="text"]
-	{ border: 1px solid #666; }
+	{ border: 1px solid #666; width: 72em; }
 
 input[type="submit"]
 	{  background-color: #ccc; color: #333; }
