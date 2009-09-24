@@ -24,5 +24,5 @@ Other tables in database: [% FOREACH cont IN controllers %]
 </tr>
 [% END %]
 </table>
-<a href="[% c.uri_for('/add') %]">Add new study</a>
+<a href="[% c.uri_for('add') %]">Add new study</a>
 <a href="[% c.uri_for('import') %]">Import from CSV</a>

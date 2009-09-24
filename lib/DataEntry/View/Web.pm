@@ -1,7 +1,6 @@
 package DataEntry::View::Web;
-
-use strict;
-use base 'Catalyst::View::TT';
+use Moose;
+BEGIN {extends 'Catalyst::View::TT'};
 
 __PACKAGE__->config(TEMPLATE_EXTENSION => '.tt',
                     WRAPPER => 'page.tt');

@@ -8,7 +8,7 @@ IF c.req.params.limit == 1; cx = 'AND'; ELSE; cx = 'OR'; END;
  -%]</title>
  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
- <link rel="stylesheet" href="[% c.uri_for('/static/emastic/css/reset.css') %]"
+ <link rel="stylesheet" href="[% c.uri_for('/') _ '/static/emastic/css/reset.css'  %]"
        type="text/css" media="screen, projection">
 <link rel="stylesheet" href="[% c.uri_for('/static/emastic/css/grid.css') %]"
        type="text/css" media="screen, projection">
@@ -52,5 +52,6 @@ $(".stripeMe tr:even").addClass("alt");
 
 </head>
  </head>
+ [% USE Dumper; Dumper.dump_html(c.uri_for('/')) %]
  [% content %]
 </html>
