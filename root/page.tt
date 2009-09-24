@@ -52,6 +52,5 @@ $(".stripeMe tr:even").addClass("alt");
 
 </head>
  </head>
- [% USE Dumper; Dumper.dump_html(c.uri_for('/')) %]
  [% content %]
 </html>

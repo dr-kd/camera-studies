@@ -1,7 +1,7 @@
 package DataEntry::ControllerBase::Table;
 use Moose;
 BEGIN { extends 'Catalyst::Controller'};
-__PACKAGE__->config->{template_dir} = 'studies';
+__PACKAGE__->config->{template_dir} = 'base';
 
 sub start : Chained PathPart('table') CaptureArgs(0) {
    my ( $self, $c ) = @_;

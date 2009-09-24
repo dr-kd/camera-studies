@@ -1,4 +1,4 @@
-<h1>Import [% namespace %] from CSV file</h1>
+<h1>Import studies from CSV file</h1>
 <form method='POST' enctype='multipart/form-data' name='sheet' action='[% c.uri_for('do_import') %]'>
 CSV file to import: <input type='file' name='xls'>
 <input type='submit' value='Upload'>
