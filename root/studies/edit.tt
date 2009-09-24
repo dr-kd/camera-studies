@@ -1,3 +1,4 @@
+<h1> [% c.uri_for('/') %]
 <h2> [% namespace %] </h2>
 <form name="up" action="[% c.uri_for(s.id, 'do_edit') %]" method="post">
 <table>
@@ -48,10 +49,18 @@
 <td>[% labels.abst %] </td>
 <td><textarea name="abst" rows='5' cols=72>[% s.abst %]</textarea> </td>
 </tr>
+<tr><td></td><td> studies_details m2m</td> </tr>
+<tr><td></td><td> studies_species m2m</td> </tr>
+<tr><td></td><td> studies_placement m2m</td> </tr>
+<tr><td></td><td> studies_field m2m </td> </tr>
+<tr><td></td><td> studies_design m2m </td> </tr>
+<tr><td></td><td> studies_camera m2m </td> </tr>
+<tr><td></td><td> studies_analy m2m </td> </tr>
+<tr><td></td><td> results 12m</td> </tr>
+<tr><td></td><td> extra 12m</td> </tr>
 <tr>
 <td></td>
 <td> <input type="submit" value="submit">
 </tr>
-<tr>
 </table>
 </form>
