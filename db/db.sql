@@ -1,136 +1,136 @@
 create table studies (
 id integer primary key,
-CITAT text ,
-AUTH_C text ,
-YEAR integer,
-AUTH_ALL text,
-ABST text,
-LINK text,
-TITLE text,
-JOURN text,
-PUBL text,
-VOL text,
-ISSU text,
-PAGE text
+citat text ,
+auth_c text ,
+year integer,
+auth_all text,
+abst text,
+link text,
+title text,
+journ text,
+publ text,
+vol text,
+issu text,
+page text
 );
 
 create table studies_details (
-study_id integer REFERENCES studies(id),
-details_id integer REFERENCES study_details(id),
+study_id integer references studies(id),
+details_id integer references study_details(id),
 primary key (study_id, details_id)
 );
 
 create table studies_species (
-study_id integer REFERENCES studies(id),
-species_id integer REFERENCES species_details(id),
+study_id integer references studies(id),
+species_id integer references species_details(id),
 primary key (study_id, species_id)
 );
 
 create table studies_placement (
-study_id integer REFERENCES studies(id),
-placement_id integer REFERENCES placement(id),
+study_id integer references studies(id),
+placement_id integer references placement(id),
 primary key (study_id, placement_id)
 );
 
 create table studies_field (
-study_id integer REFERENCES studies(id),
-field_id integer REFERENCES field_details(id),
+study_id integer references studies(id),
+field_id integer references field_details(id),
 primary key (study_id, field_id)
 );
 
 create table studies_design (
-study_id integer REFERENCES studies(id),
-design_id integer REFERENCES design(id),
+study_id integer references studies(id),
+design_id integer references design(id),
 primary key (study_id, design_id)
 );
 
 create table studies_camera (
-study_id integer REFERENCES studies(id),
-camera_id integer REFERENCES camera(id),
+study_id integer references studies(id),
+camera_id integer references camera(id),
 primary key (study_id, camera_id)
 );
 
 create table studies_analy (
-study_id integer REFERENCES studies(id),
-analy_id integer REFERENCES analy(id),
+study_id integer references studies(id),
+analy_id integer references analy(id),
 primary key (study_id, analy_id)
 );
 
 create table study_details (
 id integer primary key,
-STUDY_S text,
-STUDY_E text,
-SEASON text,
-COUNTRY text,
-REGION text,
-LOCAT text,
-LOCAT_E text);
+study_s text,
+study_e text,
+season text,
+country text,
+region text,
+locat text,
+locat_e text);
 
 create table species(
 id integer primary key,
-SP_M text,
-SP_O text,
-SP_B text);
+sp_m text,
+sp_o text,
+sp_b text);
 
 create table results (
 id integer primary key,
 study_id integer references studies(id),
-TOT_N text,
-TR_N text,
-TARG_NO text,
-TOT_NO text,
-TOT_IM text,
-MIS text,
-PH_RATE);
+tot_n text,
+tr_n text,
+targ_no text,
+tot_no text,
+tot_im text,
+mis text,
+ph_rate);
 
 create table placement(
 id integer primary key,
-PLACEM text,
-SPACI text,
-LAYOUT text,
-MOUNT text,
-LURE text
+placem text,
+spaci text,
+layout text,
+mount text,
+lure text
 );
 
 create table field_details(
 id integer primary key,
-CAMST_MA text,
-CAMST_MI text,
-CAMST text,
-NIG_ST text,
-SITES text,
-AREAKM text,
-NO_SEAS text);
+camst_ma text,
+camst_mi text,
+camst text,
+nig_st text,
+sites text,
+areakm text,
+no_seas text);
 
 create table extra (
 id integer primary key,
 study_id integer references studies(id),
-PEERR text,
-EMAIL text,
-ADDRESS text,
-QUOTES text,
-NOTES text,
-TERM text);
+peerr text,
+email text,
+address text,
+quotes text,
+notes text,
+term text);
 
 create table design (
 id integer primary key,
-STUDY_T text,
-OBJECTI text
+study_t text,
+objecti text
 );
 
 create table camera(
 id integer primary key,
-CAM_B text,
-DIG text,
-PA_AC text,
-IR_WH text,
-PAIR text
+cam_b text,
+dig text,
+pa_ac text,
+ir_wh text,
+pair text
 );
 
 create table analy (
 id integer primary key,
-ANALY_T text,
-ANALY_N text
+analy_t text,
+analy_n text
 );
 
 create table labels (
