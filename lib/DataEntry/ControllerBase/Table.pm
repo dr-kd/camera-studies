@@ -27,7 +27,8 @@ sub list : Chained('start') PathPart('list') Args(0) {
 sub do_list :Private {
    my ( $self, $c ) = @_;
    my $table = ucfirst($c->namespace);
-   my $studies = $c->model("DB::$table")->search({});
+   $c->stash( page =>  $c->req->query_parameters->{page} || 1);
+   my $studies = $c->model("DB::$table")->search({}, {rows => 20, page => $c->stash->{page}});
    $c->stash( studies => $studies,
               template => $self->config->{template_dir} . '/list.tt' );
 }

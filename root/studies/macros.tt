@@ -19,3 +19,19 @@ name = view.result_source.columns; %]
 </table>
 </div>
 [% END %]
+
+[% MACRO pager(p) BLOCK; %]
+[% IF p.current_page != p.first_page %] <a href="[% c.uri_for('', 
+{ page = p.previous_page }) %]">Previous page</a>  [% END %] 
+[% IF p.current_page != p.last_page %] | <a href="[% c.uri_for('',
+ { page = p.next_page }) %]">Next page</a> [% END %]
+[% FOREACH i IN [1 .. p.last_page] %]
+<a  href="[% c.uri_for('', { page => i }) %]">[% i %]</a>
+[% END %]
+[% END %]
+
+[% MACRO other_pages BLOCK %]
+Other tables in database: [% FOREACH cont IN controllers %]
+<a href="[% c.uri_for("/$cont") %]"> [% cont %] </a>
+[% END %]
+[% END %]

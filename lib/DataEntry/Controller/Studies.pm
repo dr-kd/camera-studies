@@ -31,7 +31,7 @@ sub do_edit : Chained('item') PathPart('do_edit') Args(0) {
     my $children = {};
     my $dest;
     foreach my $k ( keys %$params) {
-        if ($k =~ /^http:\/\//) {
+        if ($k =~ /^http/) {
             $dest = $k;
             next;
         }
@@ -60,11 +60,16 @@ sub do_edit : Chained('item') PathPart('do_edit') Args(0) {
     }
     # deal with extra and results here
     if ($dest) {
-        $c->res->redirect($dest);
+        my ($to, $return) = split '\|\|', $dest;
+        $to = URI->new($to);
+        $to->query_form(orig_id => $study_id);
+        $c->res->redirect($to);
+        return 1;
     }
     # go to subtable page if relevant param is present
     $DB::single=1;
     $study_id++;
+    # $c->stash( template => $self->config->{template_dir} . '/do_edit.tt');
     $c->res->redirect($c->uri_for("/studies/$study_id/edit"));
 }
 
