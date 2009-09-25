@@ -32,10 +32,14 @@ sub do_list :Private {
               template => $self->config->{template_dir} . '/list.tt' );
 }
 
+sub make_new : Chained('start') PathPart('do_edit') Args(0) {
+    my ($self, $c) = @_;
+    $c->forward('do_edit');
+}
+
 sub create : Chained('start') PathPart('add') Args(0) {
    my ( $self, $c ) = @_;
-   # Create the empty book row for the form
-    my $table = ucfirst($c->namespace);
+   my $table = ucfirst($c->namespace);
    $c->stash( s => $c->model("DB::$table")->new_result({}) );
    $c->stash( template => $self->config->{template_dir} . '/edit.tt');
 }
@@ -70,7 +74,15 @@ sub edit : Chained('item') PathPart('edit') Args(0) {
 
 sub do_edit : Chained('item') PathPart('do_edit') Args(0) {
     my ( $self, $c ) = @_;
-    $c->stash( template => $self->config->{template_dir} . '/do_edit.tt');
+    my $params = $c->req->params;
+    $DB::single=1;
+    my $return_id = $params->{source_id};
+    delete $params->{source_id};
+    my $table_class = $params->{actionclass};
+    delete $params->{actionclass};
+    $table_class =~ s/DataEntry::Controller:://;
+    $c->model("DB::$table_class")->create($params);
+    $c->res->redirect($c->uri_for('/studies', $return_id, 'edit'));
 }
 
 1;
