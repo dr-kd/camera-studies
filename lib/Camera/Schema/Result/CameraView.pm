@@ -9,10 +9,8 @@ __PACKAGE__->result_source_instance->is_virtual(1);
 __PACKAGE__->result_source_instance->view_definition(
     "select camera.*, studies_camera.study_id from camera
     left outer join studies_camera
-    on studies_camera.camera_id = camera.id
-    where studies_camera.study_id=?
-    or studies_camera.study_id is null order by study_id desc"
-
+    on studies_camera.camera_id = camera.id and study_id = ?
+    order by study_id desc"
 );
 
 

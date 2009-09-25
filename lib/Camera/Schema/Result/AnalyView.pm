@@ -9,9 +9,8 @@ __PACKAGE__->result_source_instance->is_virtual(1);
 __PACKAGE__->result_source_instance->view_definition(
 "select analy.*, studies_analy.study_id from analy
     left outer join studies_analy
-    on studies_analy.analy_id = analy.id
-    where studies_analy.study_id=?
-    or studies_analy.study_id is null order by study_id desc"
+    on studies_analy.analy_id = analy.id and study_id = ?
+    order by study_id desc"
 
 );
 
