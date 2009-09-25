@@ -16,7 +16,6 @@ sub import_data {
     my %cols;
     $cols{$_} = '' for @cols;
     delete($cols{id});
-    @cols{@head};
     my $error;
     foreach my $c (@head) {
         unless (exists ($cols{$c})) {
