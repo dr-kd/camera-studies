@@ -14,7 +14,7 @@ IF c.req.params.limit == 1; cx = 'AND'; ELSE; cx = 'OR'; END;
        type="text/css" media="screen, projection">
 <link rel="stylesheet" href="[% c.uri_for('/static/emastic/css/type.css') %]"
        type="text/css" media="screen, projection">
-<link rel="stylesheet" href="[% c.uri_for('/static/emastic/css/gadgets.css') %]"
+<link rel="stylesheet" href="[% c.uri_for('/static/emastic/css/plugins/gadgets.css') %]"
       type="text/css" media="screen, projection">
 <script type="text/javascript" src="[% c.uri_for('/static/js/jquery-1.3.1.min.js
 ') %]"></script>

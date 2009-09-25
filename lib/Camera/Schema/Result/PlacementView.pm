@@ -7,10 +7,12 @@ __PACKAGE__->table_class('DBIx::Class::ResultSource::View');
 __PACKAGE__->table('placement_view');
 __PACKAGE__->result_source_instance->is_virtual(1);
 __PACKAGE__->result_source_instance->view_definition(
-    "select placement.* , studies_placement.study_id from placement
-         left join studies_placement
-         on placement_id = studies_placement.placement_id
-         and studies_placement.study_id=?"
+            "select placement.*, studies_placement.study_id from placement
+    left outer join studies_placement
+    on studies_placement.placement_id = placement.id
+    where studies_placement.study_id=?
+    or studies_placement.study_id is null order by study_id desc"
+
 );
 
 

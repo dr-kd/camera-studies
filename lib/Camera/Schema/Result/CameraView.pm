@@ -7,10 +7,12 @@ __PACKAGE__->table_class('DBIx::Class::ResultSource::View');
 __PACKAGE__->table('camera_view');
 __PACKAGE__->result_source_instance->is_virtual(1);
 __PACKAGE__->result_source_instance->view_definition(
-    "select camera.* , studies_camera.study_id from camera
-         left join studies_camera
-         on camera_id = studies_camera.camera_id
-         and studies_camera.study_id=?"
+    "select camera.*, studies_camera.study_id from camera
+    left outer join studies_camera
+    on studies_camera.camera_id = camera.id
+    where studies_camera.study_id=?
+    or studies_camera.study_id is null order by study_id desc"
+
 );
 
 

@@ -2,34 +2,35 @@
 <h1> [% c.uri_for('/') %]
 <h2> [% namespace %] </h2>
 <form name="up" action="[% c.uri_for(s.id, 'do_edit') %]" method="post">
+<input type="hidden" name="id" value="[% s.id %]" >
 <table>
 <tr>
 <td>[% labels.citat %] </td>
-<td><input type="text" name="citat" value="[% s.citat %]" /></td>
+<td><input type="text" name="citat" value="[% s.citat | html%]" /></td>
 </tr>
 <tr>
 <td>[% labels.auth_c %] </td>
-<td><input type="text" name="auth_c" value="[% s.auth_c %]" /> </td>
+<td><input type="text" name="auth_c" value="[% s.auth_c | html %]" /> </td>
 </tr>
 <tr>
 <td>[% labels.year %] </td>
-<td><input type="text" name="year" value="[% s.year %]" /> </td>
+<td><input type="text" name="year" value="[% s.year | html %]" /> </td>
 </tr>
 <tr>
 <td>[% labels.auth_all %] </td>
-<td><input type="text" name="auth_all" value="[% s.auth_all %]" /> </td>
+<td><input type="text" name="auth_all" value="[% s.auth_all | html %]" /> </td>
 </tr>
 <tr>
 <td>[% labels.link %] </td>
-<td><input type="text" name="link" value="[% s.link %]" /><br /><a href="[% s.link %]">link</a> </td>
+<td><input type="text" name="link" value="[% s.link | html %]" /><br /><a href="[% s.link %]">link</a> </td>
 </tr>
 <tr>
 <td>[% labels.title %] </td>
-<td><input type="text" name="title" value="[% s.title %]" /> </td>
+<td><input type="text" name="title" value="[% s.title | html %]" /> </td>
 </tr>
 <tr>
 <td>[% labels.journ %] </td>
-<td><input type="text" name="journ" value="[% s.journ %]" /> </td>
+<td><input type="text" name="journ" value="[% s.journ | html %]" /> </td>
 </tr>
 <tr>
 <td>[% labels.publ %] </td>
@@ -37,28 +38,28 @@
 </tr>
 <tr>
 <td>[% labels.vol %] </td>
-<td><input type="text" name="vol" value="[% s.vol %]" /> </td>
+<td><input type="text" name="vol" value="[% s.vol | html %]" /> </td>
 </tr>
 <tr>
 <td>[% labels.issu %] </td>
-<td><input type="text" name="issu" value="[% s.issu %]" /> </td>
+<td><input type="text" name="issu" value="[% s.issu | html %]" /> </td>
 </tr>
 <tr>
 <td>[% labels.page %] </td>
 <td><input type="text" name="page" value="[% s.page %]" /> </td>
 </tr>
 <td>[% labels.abst %] </td>
-<td><textarea name="abst" rows='5' cols=72>[% s.abst %]</textarea> </td>
+<td><textarea name="abst" rows='5' cols=72>[% s.abst | html %]</textarea> </td>
 </tr>
-<tr><td><a href="[% c.uri_for('/studydetails') %]" target="_BLANK" >Details</a></td><td> [% do_details(details) %] </tr>
-<tr><td><a href="[% c.uri_for('/species') %]" target="_BLANK" >Species</a></td><td> [% do_details(species) %] </td> </tr>
-<tr><td><a href="[% c.uri_for('/placement') %]" target="_BLANK">Placement</a></td><td> [% do_details(placement) %]  </td> </tr>
-<tr><td><a href="[% c.uri_for('/field') %]" target="_BLANK">Field<a/></td><td> [% do_details(field) %] </td> </tr>
-<tr><td><a href="[% c.uri_for('/design') %]" target="_BLANK">Design</a></td><td> [% do_details(design) %] </td> </tr>
-<tr><td><a href="[% c.uri_for('/camera') %]" target="_BLANK">Camera</a></td><td> [% do_details(camera) %]</td> </tr>
-<tr><td><a href="[% c.uri_for('/analy') %]" target="_BLANK">Analysis</a></td><td> [% do_details(analy) %]</td> </tr>
-<tr><td>Results</td><td> [% do_details(results) %]</td> </tr>
-<tr><td>Extra</td><td> [% do_details(extras) %]</td> </tr>
+<tr><td><a href="[% c.uri_for('/studydetails') %]" target="_BLANK" >Details</a></td><td> [% do_details(details, 'StudiesDetails') %] </tr>
+<tr><td><a href="[% c.uri_for('/species') %]" target="_BLANK" >Species</a></td><td> [% do_details(species, 'StudiesSpecies') %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/placement') %]" target="_BLANK">Placement</a></td><td> [% do_details(placement, 'StudiesPlacement') %]  </td> </tr>
+<tr><td><a href="[% c.uri_for('/field') %]" target="_BLANK">Field<a/></td><td> [% do_details(field, 'StudiesField') %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/design') %]" target="_BLANK">Design</a></td><td> [% do_details(design, 'StudiesDesign') %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/camera') %]" target="_BLANK">Camera</a></td><td> [% do_details(camera, 'StudiesCamera') %]</td> </tr>
+<tr><td><a href="[% c.uri_for('/analy') %]" target="_BLANK">Analysis</a></td><td> [% do_details(analy, 'StudiesAnaly') %]</td> </tr>
+<tr><td>Results</td><td> [% do_details(results, 'Results') %]</td> </tr>
+<tr><td>Extra</td><td> [% do_details(extras, 'Extra') %]</td> </tr>
 <tr>
 <td></td>
 <td> <input type="submit" value="submit">

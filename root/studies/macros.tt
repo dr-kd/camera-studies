@@ -1,9 +1,21 @@
-[% MACRO do_details(view) BLOCK;
-cols = view.result_source.columns; %]
+[% MACRO do_details(view, tbl_name) BLOCK;
+name = view.result_source.columns; %]
+<div class="m2m" style="overflow: auto; height: 20em; font-size: 0.8em">
 <table>
 <tr>
-[% FOREACH col IN cols %]
-    <td> [% col %] </td>
+[% FOREACH n IN name; NEXT IF n == 'id' %]
+[% IF n == 'study_id'; %] <th>add</th> [% NEXT; END; %]
+    <th> [% labels.$n || n %] </th>
 [% END %]</tr>
+<tr><td colspan="[% name.size %]"><input type='submit' name='[% c.uri_for("/$tbl_name", 'add') %]' value="add new [% tbl_name %]"></tr>
+<input type="hidden" name="[% tbl_name %]" value="del" /><input type="hidden" name="[% tbl_name %]" value="del" />
+[% WHILE ( v = view.next) %]
+[% FOREACH n IN name; NEXT IF n == 'id' %]
+[% IF n == 'study_id'; %] <td> <input name="[% tbl_name %]" type="checkbox" value="[% v.id %]" [% IF v.study_id == s.id %] checked='checked' [% END %]> </td> [% NEXT; END; %]
+<td [% IF v.study_id; %] style="background: #cff" [% END %] > [% v.$n %] </td>
+[% END %]</tr>
+[% END %]
+<tr><td colspan="[% name.size %]"><input type='submit' name='[% c.uri_for(tbl_name, 'add') %]' value="add new [% tbl_name %]"></tr>
 </table>
+</div>
 [% END %]

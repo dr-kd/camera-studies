@@ -68,8 +68,9 @@ sub edit : Chained('item') PathPart('edit') Args(0) {
     $c->stash( template => $self->config->{template_dir} . '/edit.tt');
 }
 
-sub do_edit : Chained('item') PathPart('edit') Args(0) {
+sub do_edit : Chained('item') PathPart('do_edit') Args(0) {
     my ( $self, $c ) = @_;
+    $c->stash( template => $self->config->{template_dir} . '/do_edit.tt');
 }
 
 1;

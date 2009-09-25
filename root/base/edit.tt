@@ -3,7 +3,7 @@
 <table>
 <form name="up" action="[% c.uri_for(s.id, 'do_edit') %]" method="post">
 [% FOREACH col IN cols %]
-<tr><td> [% labels.$col %]</td><td> <input type="text" name="[% col %]" value="[% s.$col %]" /> </td>
+<tr><td> [% labels.$col %]</td><td> <input type="text" name="[% col %]" value="[% s.$col | html %]" /> </td>
 [% END %]
 <tr><td></td><td><input type="submit" value="Edit/Add" /></td></tr>
 </tr>

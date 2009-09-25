@@ -7,10 +7,12 @@ __PACKAGE__->table_class('DBIx::Class::ResultSource::View');
 __PACKAGE__->table('details_view');
 __PACKAGE__->result_source_instance->is_virtual(1);
 __PACKAGE__->result_source_instance->view_definition(
-    "select study_details.* , studies_details.study_id from study_details
-         left join studies_details
-         on details_id = studies_details.details_id
-         and studies_details.study_id=?"
+"select study_details.*, studies_details.study_id from study_details
+    left outer join studies_details
+    on studies_details.details_id = study_details.id
+    where studies_details.study_id=?
+    or studies_details.study_id is null order by study_id desc"
+
 );
 
 
