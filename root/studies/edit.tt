@@ -51,15 +51,15 @@
 <td>[% labels.abst %] </td>
 <td><textarea name="abst" rows='5' cols=72>[% s.abst | html %]</textarea> </td>
 </tr>
-<tr><td><a href="[% c.uri_for('/studydetails') %]" target="_BLANK" >Details</a></td><td> [% do_details(details, 'StudiesDetails') %] </tr>
-<tr><td><a href="[% c.uri_for('/species') %]" target="_BLANK" >Species</a></td><td> [% do_details(species, 'StudiesSpecies') %] </td> </tr>
-<tr><td><a href="[% c.uri_for('/placement') %]" target="_BLANK">Placement</a></td><td> [% do_details(placement, 'StudiesPlacement') %]  </td> </tr>
-<tr><td><a href="[% c.uri_for('/field') %]" target="_BLANK">Field<a/></td><td> [% do_details(field, 'StudiesField') %] </td> </tr>
-<tr><td><a href="[% c.uri_for('/design') %]" target="_BLANK">Design</a></td><td> [% do_details(design, 'StudiesDesign') %] </td> </tr>
-<tr><td><a href="[% c.uri_for('/camera') %]" target="_BLANK">Camera</a></td><td> [% do_details(camera, 'StudiesCamera') %]</td> </tr>
-<tr><td><a href="[% c.uri_for('/analy') %]" target="_BLANK">Analysis</a></td><td> [% do_details(analy, 'StudiesAnaly') %]</td> </tr>
-<tr><td>Results</td><td> [% do_details(results, 'Results') %]</td> </tr>
-<tr><td>Extra</td><td> [% do_details(extras, 'Extra') %]</td> </tr>
+<tr><td><a href="[% c.uri_for('/studydetails') %]" target="_BLANK" >Details</a></td><td> [% do_details(details, 'StudiesDetails', 'studydetails') %] </tr>
+<tr><td><a href="[% c.uri_for('/species') %]" target="_BLANK" >Species</a></td><td> [% do_details(species, 'StudiesSpecies', 'species') %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/placement') %]" target="_BLANK">Placement</a></td><td> [% do_details(placement, 'StudiesPlacement', 'placement') %]  </td> </tr>
+<tr><td><a href="[% c.uri_for('/field') %]" target="_BLANK">Field<a/></td><td> [% do_details(field, 'StudiesField', 'fielddetails') %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/design') %]" target="_BLANK">Design</a></td><td> [% do_details(design, 'StudiesDesign', 'design') %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/camera') %]" target="_BLANK">Camera</a></td><td> [% do_details(camera, 'StudiesCamera', 'camera') %]</td> </tr>
+<tr><td><a href="[% c.uri_for('/analy') %]" target="_BLANK">Analysis</a></td><td> [% do_details(analy, 'StudiesAnaly', 'analy') %]</td> </tr>
+<tr><td>Results</td><td> [% do_details(results, 'Results', 'results') %]</td> </tr>
+<tr><td>Extra</td><td> [% do_details(extras, 'Extra', 'extra') %]</td> </tr>
 <tr>
 <td></td>
 <td> <input type="submit" value="submit">

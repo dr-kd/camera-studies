@@ -1,9 +1,11 @@
-<h2> [% namespace %] </h2>
-[% cols = s.result_source.columns %]
+<h2> [% namespace _ c.action.class %] </h2>
+[% cols = s.result_source.columns;%]
 <table>
 <form name="up" action="[% c.uri_for(s.id, 'do_edit') %]" method="post">
-[% FOREACH col IN cols %]
-<tr><td> [% labels.$col %]</td><td> <input type="text" name="[% col %]" value="[% s.$col | html %]" /> </td>
+<input type="hidden" name="source_id" value="[% c.req.query_parameters.orig_id %]" >
+<input type="hidden" name="actionclass" value=[% c.action.class %]>
+[% FOREACH col IN cols; NEXT IF col == 'id' %]
+<tr><td> [% labels.$col || col %]</td><td> <input type="text" name="[% col %]" value="[% s.$col | html %]" /> </td>
 [% END %]
 <tr><td></td><td><input type="submit" value="Edit/Add" /></td></tr>
 </tr>
