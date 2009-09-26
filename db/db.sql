@@ -11,7 +11,9 @@ journ text,
 publ text,
 vol text,
 issu text,
-page text
+page text,
+userid text, -- who dealt with this one
+done text -- is is complete
 );
 
 create table studies_details (
@@ -20,22 +22,10 @@ details_id integer references study_details(id),
 primary key (study_id, details_id)
 );
 
-create table studies_species (
-study_id integer references studies(id),
-species_id integer references species_details(id),
-primary key (study_id, species_id)
-);
-
 create table studies_placement (
 study_id integer references studies(id),
 placement_id integer references placement(id),
 primary key (study_id, placement_id)
-);
-
-create table studies_field (
-study_id integer references studies(id),
-field_id integer references field_details(id),
-primary key (study_id, field_id)
 );
 
 create table studies_design (
@@ -56,21 +46,78 @@ analy_id integer references analy(id),
 primary key (study_id, analy_id)
 );
 
+create table study_dates (
+id integer primary key,
+study_start text,
+study_end text
+);
+
+create table studies_dates (
+date_id integer references studies_dates(id),
+study_id integer references studies(id),
+primary key (study_id, date_id)
+);
+
+create table study_country (
+id integer primary key,
+country text
+);
+
+create table studies_countries (
+country_id integer references study_country(id),
+study_id integer references studies(id),
+primary key (country_id, study_id)
+);
+
+create table study_region (
+id integer primary key,
+region text
+);
+
+create table studies_region (
+region_id integer references study_region(id),
+study_id integer references studies(id),
+primary key (study_id, region_id)
+);
+
 create table study_details (
 id integer primary key,
-study_s text,
-study_e text,
-season text,
-country text,
 region text,
 locat text,
 locat_e text);
 
-create table species(
+create table species_main (
 id integer primary key,
-sp_m text,
-sp_o text,
-sp_b text);
+species_name
+);
+
+create table studies_speciesmain (
+study_id integer references studies(id),
+species_id integer references species_main(id),
+primary key (study_id, species_id)
+);
+
+create table species_other (
+id integer primary key,
+species_name
+);
+
+create table studies_speciesother (
+study_id integer references studies(id),
+species_id integer references species_other(id),
+primary key (study_id, species_id)
+);
+
+create table species_bycatch (
+id integer primary key,
+species_name
+);
+
+create table studies_speciesbycatch (
+study_id integer references studies(id),
+species_id integer references species_bycatch(id),
+primary key (study_id, species_id)
+);
 
 create table results (
 id integer primary key,
@@ -81,7 +128,8 @@ targ_no text,
 tot_no text,
 tot_im text,
 mis text,
-ph_rate);
+ph_rate
+);
 
 create table placement(
 id integer primary key,
@@ -94,6 +142,7 @@ lure text
 
 create table field_details(
 id integer primary key,
+study_id integer references studies(id),
 camst_ma text,
 camst_mi text,
 camst text,
@@ -136,4 +185,5 @@ analy_n text
 create table labels (
 label text,
 label_text text,
-primary key (label));
+primary key (label)
+);
