@@ -1,4 +1,4 @@
-<h2> [% namespace _ c.action.class %] </h2>
+<h2> [% namespace %] </h2>
 [% cols = s.result_source.columns;%]
 <table>
 <form name="up" action="[% c.uri_for(s.id, 'do_edit') %]" method="post">
