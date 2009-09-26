@@ -15,6 +15,13 @@ __PACKAGE__->add_columns(
     is_nullable => 1,
     size => undef,
   },
+  "study_id",
+  {
+    data_type => "integer",
+    default_value => undef,
+    is_nullable => 1,
+    size => undef,
+  },
   "camst_ma",
   {
     data_type => "text",
@@ -66,15 +73,15 @@ __PACKAGE__->add_columns(
   },
 );
 __PACKAGE__->set_primary_key("id");
-__PACKAGE__->has_many(
-  "studies_fields",
-  "Camera::Schema::Result::StudiesField",
-  { "foreign.field_id" => "self.id" },
+__PACKAGE__->belongs_to(
+  "study_id",
+  "Camera::Schema::Result::Studies",
+  { id => "study_id" },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.04006 @ 2009-09-23 14:10:49
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:82Zy628qR4uFt0ggVJUGsw
+# Created by DBIx::Class::Schema::Loader v0.04006 @ 2009-09-26 18:43:52
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:J/f55XwC/xcLtrhmpNgUoQ
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

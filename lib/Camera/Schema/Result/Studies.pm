@@ -99,6 +99,20 @@ __PACKAGE__->add_columns(
     is_nullable => 1,
     size => undef,
   },
+  "userid",
+  {
+    data_type => "text",
+    default_value => undef,
+    is_nullable => 1,
+    size => undef,
+  },
+  "done",
+  {
+    data_type => "text",
+    default_value => undef,
+    is_nullable => 1,
+    size => undef,
+  },
 );
 __PACKAGE__->set_primary_key("id");
 __PACKAGE__->has_many(
@@ -107,18 +121,8 @@ __PACKAGE__->has_many(
   { "foreign.study_id" => "self.id" },
 );
 __PACKAGE__->has_many(
-  "studies_species",
-  "Camera::Schema::Result::StudiesSpecies",
-  { "foreign.study_id" => "self.id" },
-);
-__PACKAGE__->has_many(
   "studies_placements",
   "Camera::Schema::Result::StudiesPlacement",
-  { "foreign.study_id" => "self.id" },
-);
-__PACKAGE__->has_many(
-  "studies_fields",
-  "Camera::Schema::Result::StudiesField",
   { "foreign.study_id" => "self.id" },
 );
 __PACKAGE__->has_many(
@@ -137,8 +141,43 @@ __PACKAGE__->has_many(
   { "foreign.study_id" => "self.id" },
 );
 __PACKAGE__->has_many(
+  "studies_dates",
+  "Camera::Schema::Result::StudiesDates",
+  { "foreign.study_id" => "self.id" },
+);
+__PACKAGE__->has_many(
+  "studies_countries",
+  "Camera::Schema::Result::StudiesCountries",
+  { "foreign.study_id" => "self.id" },
+);
+__PACKAGE__->has_many(
+  "studies_regions",
+  "Camera::Schema::Result::StudiesRegion",
+  { "foreign.study_id" => "self.id" },
+);
+__PACKAGE__->has_many(
+  "studies_speciesmains",
+  "Camera::Schema::Result::StudiesSpeciesmain",
+  { "foreign.study_id" => "self.id" },
+);
+__PACKAGE__->has_many(
+  "studies_speciesothers",
+  "Camera::Schema::Result::StudiesSpeciesother",
+  { "foreign.study_id" => "self.id" },
+);
+__PACKAGE__->has_many(
+  "studies_speciesbycatches",
+  "Camera::Schema::Result::StudiesSpeciesbycatch",
+  { "foreign.study_id" => "self.id" },
+);
+__PACKAGE__->has_many(
   "results",
   "Camera::Schema::Result::Results",
+  { "foreign.study_id" => "self.id" },
+);
+__PACKAGE__->has_many(
+  "field_details",
+  "Camera::Schema::Result::FieldDetails",
   { "foreign.study_id" => "self.id" },
 );
 __PACKAGE__->has_many(
@@ -148,7 +187,7 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.04006 @ 2009-09-23 14:10:49
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:hsCK24HrVsAGeyvfRTKzuA
+# Created by DBIx::Class::Schema::Loader v0.04006 @ 2009-09-26 18:43:52
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:/m6Fjzplisj28pJSBJEgBQ
 
 1;
