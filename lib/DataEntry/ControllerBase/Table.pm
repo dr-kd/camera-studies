@@ -78,6 +78,9 @@ sub do_edit : Chained('item') PathPart('do_edit') Args(0) {
     my $params = $c->req->params;
     $DB::single=1;
     my $return_id = $params->{source_id};
+    if ($c->namespace =~ /^(results|extra)$/) {
+        $params->{study_id} = $return_id;
+    }
     delete $params->{source_id};
     my $table_class = $params->{actionclass};
     delete $params->{actionclass};
