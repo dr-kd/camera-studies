@@ -1,5 +1,4 @@
 [% PROCESS studies/macros.tt %]
-<h1> [% c.uri_for('/') %]
 <h2> [% namespace %] </h2>
 <form name="up" action="[% c.uri_for(s.id, 'do_edit') %]" method="post">
 <input type="hidden" name="id" value="[% s.id %]" >
