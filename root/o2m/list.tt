@@ -1,0 +1,26 @@
+[% PROCESS studies/macros.tt %]
+[% cols = studies.result_source.columns %]
+[% IF ! studies  %] <h2> No records found! </h2> [% END %]
+<p><a href="[% c.uri_for('add') %]">Create [% namespace %]  </a> &nbsp;
+<a href="[% c.uri_for('import') %]">Import from CSV</a>
+</p><p>
+[% other_pages %]
+</p>
+[% pager(studies.pager) %]
+<table>
+<tr>
+[% FOREACH col IN cols; next IF c == 'id' %]
+<th> [% labels.$col %]</th>
+[% END %]
+<th></th>
+</tr>
+[% WHILE (s = studies.next) %]
+<tr>
+[% FOREACH col IN cols ; next IF col == 'id' %] <td> [% s.$col %] </td> [% END %]
+<td><a href="[% c.uri_for(s.id, 'edit') %]">edit</a><br>
+<td> <a href="[% c.uri_for(s.id , 'delete') %]">delete</a><br>
+
+</td>
+</tr>
+[% END %]
+</table>

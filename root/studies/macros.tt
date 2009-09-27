@@ -20,6 +20,27 @@ name = view.result_source.columns; %]
 </div>
 [% END %]
 
+
+[% MACRO o2m_details(view, tbl_name, new_rec) BLOCK;
+name = view.result_source.columns; %]
+<div class="m2m" style="overflow: auto; height: 20em; font-size: 0.8em">
+<table>
+<tr>
+[% FOREACH n IN name; NEXT IF n == 'id'; NEXT IF n == 'study_id' %]
+    <th> [% labels.$n || n %] </th>
+[% END %]</tr>
+<tr><td colspan="[% name.size %]"><input type='submit' name='[% c.uri_for("/$new_rec", 'add') %]|| [% c.req.uri %]' value="add new [% new_rec %]"></tr>
+<input type="hidden" name="[% tbl_name %]" value="del" /><input type="hidden" name="[% tbl_name %]" value="del" />
+[% WHILE ( v = view.next) %]
+[% FOREACH n IN name; NEXT IF n == 'id'; NEXT IF n == 'study_id' %]
+<td style="background: #cff" > [%  v.$n %] </td>
+[% END %]</tr>
+[% END %]
+</table>
+</div>
+[% END %]
+
+
 [% MACRO pager(p) BLOCK; %]
 [% IF p.current_page != p.first_page %] <a href="[% c.uri_for('', 
 { page = p.previous_page }) %]">Previous page</a>  [% END %] 
