@@ -64,6 +64,7 @@
 <tr><td><a href="[% c.uri_for('/analy') %]" target="_BLANK">Analysis</a></td><td> [% do_details(analy, 'StudiesAnaly', 'analy') %]</td> </tr>
 <tr><td>Results</td><td> [% do_details(results, 'Results', 'results') %]</td> </tr>
 <tr><td>Extra</td><td> [% do_details(extras, 'Extra', 'extra') %]</td> </tr>
+<tr><td>Finished</td><td> <input type="radio" name="done" value="1" [% IF s.done == "1" %] checked="checked" [% END %]>Yes</input></td> </tr>
 <tr>
 <td></td>
 <td> <input type="submit" value="submit">

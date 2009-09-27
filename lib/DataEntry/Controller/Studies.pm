@@ -49,6 +49,7 @@ sub do_edit : Chained('item') PathPart('do_edit') Args(0) {
     }
     my $rec = $c->model('DB::Studies')->find($study_id);
     delete $parent_tbl->{id};
+    $parent_tbl->{userid} = $c->user->username;
     $rec->update($parent_tbl);
     foreach my $k (keys %$children) {
         next if $k =~ /^(Extra|Results)$/;
