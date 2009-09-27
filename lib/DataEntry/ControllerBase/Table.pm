@@ -62,7 +62,6 @@ sub do_import : Chained('start') PathPart('do_import') Args(0) {
 sub item : Chained('start') PathPart('') CaptureArgs(1)
 {
    my ( $self, $c, $id ) = @_;
-   $DB::single=1;
    my $table = ucfirst($c->namespace);
    $c->stash( s => $c->model("DB::$table")->find($id),
           );
@@ -78,7 +77,7 @@ sub do_edit : Chained('item') PathPart('do_edit') Args(0) {
     my $params = $c->req->params;
     $DB::single=1;
     my $return_id = $params->{source_id};
-    if ($c->namespace =~ /^(results|extra)$/) {
+    if ($c->namespace =~ /^(results|extra|fielddetails)$/) {
         $params->{study_id} = $return_id;
     }
     delete $params->{source_id};

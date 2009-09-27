@@ -11,13 +11,15 @@ sub item : Chained('start') PathPart('') CaptureArgs(1) {
     $c->stash(
         id => $id,
         s => $c->model("DB::Studies")->find($id),
-        details => $c->model('DB::DetailsView')->search_rs({}, { bind => [ $id, $id ] }),
-        species => $c->model('DB::SpeciesView')->search_rs({}, { bind => [ $id, $id ] }),
-        placement => $c->model('DB::PlacementView')->search_rs({}, { bind => [ $id, $id ] }),
-        field => $c->model('DB::FieldView')->search_rs({}, { bind => [ $id, $id ] }),
-        design => $c->model('DB::DesignView')->search_rs({}, { bind => [ $id, $id ] }),
-        camera => $c->model('DB::CameraView')->search_rs({}, { bind => [ $id, $id ] }),
-        analy => $c->model('DB::AnalyView')->search_rs({}, { bind => [ $id, $id ] }),
+        placement => $c->model('DB::PlacementView')->search_rs({}, { bind => [ $id] }),
+        field => $c->model('DB::FieldDetails')->search_rs({study_id => $id}),
+        design => $c->model('DB::DesignView')->search_rs({}, { bind => [ $id] }),
+        speciesbycatch => $c->model('DB::SpeciesBycatchView')->search_rs({}, { bind => [ $id] }),
+        speciesother => $c->model('DB::SpeciesOtherView')->search_rs({}, { bind => [ $id] }),
+        speciesmain => $c->model('DB::SpeciesMainView')->search_rs({}, { bind => [ $id] }),
+        details => $c->model('DB::StudyDetailsView')->search_rs({}, { bind => [ $id] }),
+        camera => $c->model('DB::CameraView')->search_rs({}, { bind => [ $id] }),
+        analy => $c->model('DB::AnalyView')->search_rs({}, { bind => [ $id] }),
         results => $c->model('DB::Results')->search_rs({study_id => $id}),
         extras => $c->model('DB::Extra')->search_rs({study_id => $id}),
     );
@@ -55,6 +57,7 @@ sub do_edit : Chained('item') PathPart('do_edit') Args(0) {
             my $rec = { study_id => $study_id,
                         $fk_rec => $child_id,
                     };
+            $DB::single=1;
             $c->model("DB::$k")->find_or_create($rec);
         }
     }
@@ -67,7 +70,6 @@ sub do_edit : Chained('item') PathPart('do_edit') Args(0) {
         return 1;
     }
     # go to subtable page if relevant param is present
-    $DB::single=1;
     $study_id++;
     # $c->stash( template => $self->config->{template_dir} . '/do_edit.tt');
     $c->res->redirect($c->uri_for("/studies/$study_id/edit"));
