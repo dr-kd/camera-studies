@@ -22,12 +22,12 @@ __PACKAGE__->set_primary_key("id");
 __PACKAGE__->has_many(
   "studies_speciesbycatches",
   "Camera::Schema::Result::StudiesSpeciesbycatch",
-  { "foreign.species_id" => "self.id" },
+  { "foreign.speciesbycatch_id" => "self.id" },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.04006 @ 2009-09-26 18:43:52
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:kv8VjuxI3d3OK5eqMtLlRg
+# Created by DBIx::Class::Schema::Loader v0.04006 @ 2009-09-27 19:52:59
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:oEl2ZOe/Xg9AZNGj5B7O2A
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

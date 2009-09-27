@@ -156,21 +156,6 @@ __PACKAGE__->has_many(
   { "foreign.study_id" => "self.id" },
 );
 __PACKAGE__->has_many(
-  "studies_speciesmains",
-  "Camera::Schema::Result::StudiesSpeciesmain",
-  { "foreign.study_id" => "self.id" },
-);
-__PACKAGE__->has_many(
-  "studies_speciesothers",
-  "Camera::Schema::Result::StudiesSpeciesother",
-  { "foreign.study_id" => "self.id" },
-);
-__PACKAGE__->has_many(
-  "studies_speciesbycatches",
-  "Camera::Schema::Result::StudiesSpeciesbycatch",
-  { "foreign.study_id" => "self.id" },
-);
-__PACKAGE__->has_many(
   "results",
   "Camera::Schema::Result::Results",
   { "foreign.study_id" => "self.id" },
@@ -185,9 +170,24 @@ __PACKAGE__->has_many(
   "Camera::Schema::Result::Extra",
   { "foreign.study_id" => "self.id" },
 );
+__PACKAGE__->has_many(
+  "studies_speciesbycatches",
+  "Camera::Schema::Result::StudiesSpeciesbycatch",
+  { "foreign.study_id" => "self.id" },
+);
+__PACKAGE__->has_many(
+  "studies_speciesothers",
+  "Camera::Schema::Result::StudiesSpeciesother",
+  { "foreign.study_id" => "self.id" },
+);
+__PACKAGE__->has_many(
+  "studies_speciesmains",
+  "Camera::Schema::Result::StudiesSpeciesmain",
+  { "foreign.study_id" => "self.id" },
+);
 
 
-# Created by DBIx::Class::Schema::Loader v0.04006 @ 2009-09-26 18:43:52
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:/m6Fjzplisj28pJSBJEgBQ
+# Created by DBIx::Class::Schema::Loader v0.04006 @ 2009-09-27 19:52:59
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Z8ai7qoXK/Fn08AL1QklkQ
 
 1;
