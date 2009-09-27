@@ -50,21 +50,21 @@
 <td>[% labels.abst %] </td>
 <td><textarea name="abst" rows='5' cols=72>[% s.abst | html %]</textarea> </td>
 </tr>
+<tr><td><a href="[% c.uri_for('/studycountry') %]" target="_BLANK" >Country</a></td><td> [% do_details(country, 'StudiesCountries', 'studycountry') %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/studyregion') %]" target="_BLANK" >Study Region</a></td><td> [% do_details(region, 'StudiesRegion', 'studyregion') %] </td> </tr>
 <tr><td><a href="[% c.uri_for('/studydetails') %]" target="_BLANK" >Details</a></td><td> [% do_details(details, 'StudiesDetails', 'studydetails') %] </tr>
+<tr><td><a href="[% c.uri_for('/studydates') %]" target="_BLANK" >Study Dates</a></td><td> [% do_details(dates, 'StudiesDates', 'studydates') %] </td> </tr>
 <tr><td><a href="[% c.uri_for('/speciesmain') %]" target="_BLANK" >Main Species</a></td><td> [% do_details(speciesmain, 'StudiesSpeciesmain', 'speciesmain') %] </td> </tr>
 <tr><td><a href="[% c.uri_for('/speciesother') %]" target="_BLANK" >Other Species</a></td><td> [% do_details(speciesother, 'StudiesSpeciesother', 'speciesother') %] </td> </tr>
 <tr><td><a href="[% c.uri_for('/speciesbycatch') %]" target="_BLANK" >Bycatch Species</a></td><td> [% do_details(speciesbycatch, 'StudiesSpeciesbycatch', 'speciesbycatch') %] </td> </tr>
-<tr><td><a href="[% c.uri_for('/studycountry') %]" target="_BLANK" >Country</a></td><td> [% do_details(country, 'StudiesCountries', 'studycountry') %] </td> </tr>
-<tr><td><a href="[% c.uri_for('/studydates') %]" target="_BLANK" >Study Dates</a></td><td> [% do_details(dates, 'StudiesDates', 'studydates') %] </td> </tr>
-<tr><td><a href="[% c.uri_for('/studyregion') %]" target="_BLANK" >Study Region</a></td><td> [% do_details(region, 'StudiesRegion', 'studyregion') %] </td> </tr>
-<tr><td><a href="[% c.uri_for('/placement') %]" target="_BLANK">Placement</a></td><td> [% do_details(placement, 'StudiesPlacement', 'placement') %]  </td> </tr>
-<tr><td><a href="[% c.uri_for('/fielddetails') %]" target="_BLANK">Field<a/></td><td> [% o2m_details(field, 'FieldDetails', 'fielddetails') %] </td> </tr>
-<tr><td><a href="[% c.uri_for('/design') %]" target="_BLANK">Design</a></td><td> [% do_details(design, 'StudiesDesign', 'design') %] </td> </tr>
 <tr><td><a href="[% c.uri_for('/camera') %]" target="_BLANK">Camera</a></td><td> [% do_details(camera, 'StudiesCamera', 'camera') %]</td> </tr>
-<tr><td><a href="[% c.uri_for('/analy') %]" target="_BLANK">Analysis</a></td><td> [% do_details(analy, 'StudiesAnaly', 'analy') %]</td> </tr>
+<tr><td><a href="[% c.uri_for('/fielddetails') %]" target="_BLANK">Field<a/></td><td> [% o2m_details(field, 'FieldDetails', 'fielddetails') %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/placement') %]" target="_BLANK">Placement</a></td><td> [% do_details(placement, 'StudiesPlacement', 'placement') %]  </td> </tr>
+<tr><td><a href="[% c.uri_for('/design') %]" target="_BLANK">Design</a></td><td> [% do_details(design, 'StudiesDesign', 'design') %] </td> </tr>
 <tr><td>Results</td><td> [% o2m_details(results, 'Results', 'results') %]</td> </tr>
+<tr><td><a href="[% c.uri_for('/analy') %]" target="_BLANK">Analysis</a></td><td> [% do_details(analy, 'StudiesAnaly', 'analy') %]</td> </tr>
 <tr><td>Extra</td><td> [% o2m_details(extras, 'Extra', 'extra') %]</td> </tr>
-<tr><td>Finished</td><td> <input type="radio" name="done" value="1" [% IF s.done == "1" %] checked="checked" [% END %]>Yes</input></td> </tr>
+<tr><td>Finished</td><td> <input type="radio" name="done" value="1" [% IF s.done == "1" %] checked="checked" [% END %]>Yes</input>&nbsp;<input type="radio" name="done" value="-1" [% IF s.done == "-1" %] checked="checked" [% END %]>No</input></td> </tr>
 <tr>
 <td></td>
 <td> <input type="submit" value="submit">

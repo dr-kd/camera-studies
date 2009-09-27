@@ -19,7 +19,6 @@
 <td>[% s.$col %] </td>
 [% END %]
 <td> <a href="[% c.uri_for(  s.id, 'edit') %]">edit</a><br>
-<a href="[% c.uri_for( s.id, 'delete') %]">delete</a>
 </td>
 </tr>
 [% END %]
