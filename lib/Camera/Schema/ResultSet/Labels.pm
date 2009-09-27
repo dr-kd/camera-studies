@@ -1,5 +1,5 @@
 package Camera::Schema::ResultSet::Labels;
-use parent 'DBIx::Class::ResultSet';
+use parent 'Camera::Schema::ResultSet';
 use warnings;
 use strict;
 
