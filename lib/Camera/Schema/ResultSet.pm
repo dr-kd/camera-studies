@@ -3,9 +3,11 @@ use parent 'DBIx::Class::ResultSet';
 use warnings;
 use strict;
 use Text::CSV::Encoded  coder_class => 'Text::CSV::Encoded::Coder::EncodeGuess';
+use Text::Demoroniser qw(demoroniser_utf8);
 
 sub import_data {
     my ($self, $data) = @_;
+    $data = demoroniser_utf8($data);
     $DB::single=1;
     my @data = split /\r?\n/, $data;
     my $head =  lc($data[0]);
