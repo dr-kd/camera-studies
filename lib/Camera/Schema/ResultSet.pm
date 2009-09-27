@@ -11,7 +11,7 @@ sub import_data {
     $DB::single=1;
     my @data = split /\r?\n/, $data;
     my $head =  lc($data[0]);
-    my $csv = Text::CSV::Encoded->new;
+    my $csv = Text::CSV::Encoded->new({sep_char => "\t"});
     $csv->parse($head);
     my @head = $csv->fields;
     my @cols = $self->result_source->columns;
