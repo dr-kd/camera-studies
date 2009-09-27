@@ -55,6 +55,9 @@
 <tr><td><a href="[% c.uri_for('/speciesmain') %]" target="_BLANK" >Main Species</a></td><td> [% do_details(speciesmain, 'StudiesSpeciesmain', 'speciesmain') %] </td> </tr>
 <tr><td><a href="[% c.uri_for('/speciesother') %]" target="_BLANK" >Other Species</a></td><td> [% do_details(speciesother, 'StudiesSpeciesother', 'speciesother') %] </td> </tr>
 <tr><td><a href="[% c.uri_for('/speciesbycatch') %]" target="_BLANK" >Bycatch Species</a></td><td> [% do_details(speciesbycatch, 'StudiesSpeciesbycatch', 'speciesbycatch') %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/studycountry') %]" target="_BLANK" >Country</a></td><td> [% do_details(country, 'StudiesCountries', 'studycountry') %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/studydates') %]" target="_BLANK" >Study Dates</a></td><td> [% do_details(dates, 'StudiesDates', 'studydates') %] </td> </tr>
+<tr><td><a href="[% c.uri_for('/studyregion') %]" target="_BLANK" >Study Region</a></td><td> [% do_details(region, 'StudiesRegion', 'studyregion') %] </td> </tr>
 <tr><td><a href="[% c.uri_for('/placement') %]" target="_BLANK">Placement</a></td><td> [% do_details(placement, 'StudiesPlacement', 'placement') %]  </td> </tr>
 <tr><td><a href="[% c.uri_for('/fielddetails') %]" target="_BLANK">Field<a/></td><td> [% do_details(field, 'FieldDetails', 'fielddetails') %] </td> </tr>
 <tr><td><a href="[% c.uri_for('/design') %]" target="_BLANK">Design</a></td><td> [% do_details(design, 'StudiesDesign', 'design') %] </td> </tr>
