@@ -53,9 +53,9 @@ study_end text
 );
 
 create table studies_dates (
-date_id integer references studies_dates(id),
+dates_id integer references studies_dates(id),
 study_id integer references studies(id),
-primary key (study_id, date_id)
+primary key (study_id, dates_id)
 );
 
 create table study_country (
@@ -64,9 +64,9 @@ country text
 );
 
 create table studies_countries (
-country_id integer references study_country(id),
+countries_id integer references study_country(id),
 study_id integer references studies(id),
-primary key (country_id, study_id)
+primary key (countries_id, study_id)
 );
 
 create table study_region (
@@ -93,8 +93,8 @@ species_name
 
 create table studies_speciesmain (
 study_id integer references studies(id),
-species_id integer references species_main(id),
-primary key (study_id, species_id)
+speciesmain_id integer references species_main(id),
+primary key (study_id, speciesmain_id)
 );
 
 create table species_other (
@@ -104,8 +104,8 @@ species_name
 
 create table studies_speciesother (
 study_id integer references studies(id),
-species_id integer references species_other(id),
-primary key (study_id, species_id)
+speciesother_id integer references species_other(id),
+primary key (study_id, speciesother_id)
 );
 
 create table species_bycatch (
@@ -115,8 +115,8 @@ species_name
 
 create table studies_speciesbycatch (
 study_id integer references studies(id),
-species_id integer references species_bycatch(id),
-primary key (study_id, species_id)
+speciesbycatch_id integer references species_bycatch(id),
+primary key (study_id, speciesbycatch_id)
 );
 
 create table results (
