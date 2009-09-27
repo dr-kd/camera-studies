@@ -22,7 +22,11 @@ requires 'Catalyst::Plugin::Session::State::Cookie';
 requires 'Catalyst::Plugin::Session::Store::FastMmap';
 requires 'Catalyst::Authentication::Store::DBIx::Class';
 requires 'Catalyst::Authentication::Credential::HTTP';
-requires 'DBIx::Class::EncodedColumn;
+requires 'DBIx::Class::EncodedColumn';
+requires 'Text::CSV::Encoded';
+requires 'Text::Demoroniser';
+requires 'Catalyst::View::TT';
+requires 'DBIx::Class::ResultSource::View';
 
 install_script glob('script/*.pl');
 auto_install;
