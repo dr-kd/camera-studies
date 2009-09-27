@@ -4,6 +4,11 @@ BEGIN { extends 'Catalyst::Controller'};
 
 __PACKAGE__->config->{namespace} = '';
 
+sub auto :  Private {
+    my ($self, $c) = @_;
+    $c->authenticate;
+}
+
 sub index : Path Args(0) {
     my ($self, $c) = @_;
     $c->res->redirect('/studies')
