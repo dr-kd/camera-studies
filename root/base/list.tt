@@ -2,9 +2,10 @@
 <script>
 function confirmDelete(delUrl) {
   if (confirm("Are you sure you want to delete this [% c.namespace %]")) {
-  return true;
+     document.location = delUrl;
   }
   return false;
+
 }
 </script>
 [% cols = studies.result_source.columns %]
