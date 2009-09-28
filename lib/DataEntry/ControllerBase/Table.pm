@@ -94,4 +94,22 @@ sub remove : Chained('item') PathPart('delete') Args(0) {
 }
 
 
+sub get_rels {
+    my ($self, $tbl) = @_;
+    return {
+        'Analy' => [qw/ StudiesAnaly analy_id/],
+        'Camera' => [qw/StudiesCamera camera_id /],
+        'Design' => [qw/StudiesDesign design_id /],
+        'Extra' => [qw/StudiesExtra extra_id /],
+        'FieldDetails' => [qw/ StudiesField field_id /],
+        'Placement' => [qw/StudiesPlacement placement_id /],
+        'SpeciesBycatch' => [qw/StudiesSpeciesbycatch speciesbycatch_id /],
+        'SpeciesMain' => [qw/StudiesSpeciesmain speciesmain_id /],
+        'SpeciesOther' => [qw/StudiesSpeciesOther speciesother_id /],
+        'StudyCountry' => [qw/StudiesCountries country_id /],
+        'StudyDates' => [qw/ StudiesDates date_id /],
+        'StudyRegion' => [qw/StudiesRegion region_id /],
+    };
+}
+
 1;
