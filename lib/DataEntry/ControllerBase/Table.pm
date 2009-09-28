@@ -75,7 +75,6 @@ sub edit : Chained('item') PathPart('edit') Args(0) {
 sub do_edit : Chained('item') PathPart('do_edit') Args(0) {
     my ( $self, $c ) = @_;
     my $params = $c->req->params;
-    $DB::single=1;
     my $return_id = $params->{source_id};
     if ($c->namespace =~ /^(results|extra|fielddetails)$/) {
         $params->{study_id} = $return_id;
@@ -87,5 +86,12 @@ sub do_edit : Chained('item') PathPart('do_edit') Args(0) {
     $c->model("DB::$table_class")->create($params);
     $c->res->redirect($c->uri_for('/studies', $return_id, 'edit'));
 }
+
+sub remove : Chained('item') PathPart('delete') Args(0) {
+    my ( $self, $c ) = @_;
+    $c->stash->{"s"}->delete();
+    $c->res->redirect($c->req->referer);
+}
+
 
 1;

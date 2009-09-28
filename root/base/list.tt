@@ -1,4 +1,10 @@
 [% PROCESS studies/macros.tt %]
+<script>
+function confirmDelete(delUrl) {
+  if (confirm("Are you sure you want to delete this [% c.namespace %]")) {
+  }
+}
+</script>
 [% cols = studies.result_source.columns %]
 [% IF ! studies  %] <h2> No records found! </h2> [% END %]
 <p><a href="[% c.uri_for('add') %]">Create [% namespace %]  </a> &nbsp;
@@ -18,7 +24,7 @@
 <tr>
 [% FOREACH col IN cols ; next IF col == 'id' %] <td> [% s.$col %] </td> [% END %]
 <td><a href="[% c.uri_for(s.id, 'edit') %]">edit</a><br>
-<td> <a href="[% c.uri_for(s.id , 'delete') %]">delete</a><br>
+<td> <a href="javascript:confirmDelete('[% c.uri_for(s.id , 'delete') %]')">delete</a><br>
 
 </td>
 </tr>
