@@ -6,16 +6,14 @@ use Carp;
 use Catalyst::Runtime 5.80;
 
 use parent qw/Catalyst/;
-use Catalyst qw/-Debug
-                ConfigLoader
+use Catalyst qw/ConfigLoader
                 Static::Simple
                 Unicode
-               
-               Authentication
-               Authorization::Roles
-               Session
-               Session::State::Cookie
-               Session::Store::FastMmap /;
+                Authentication
+                Authorization::Roles
+                Session
+                Session::State::Cookie
+                Session::Store::FastMmap /;
 our $VERSION = '0.01';
 
 __PACKAGE__->config( name => 'DataEntry' );
