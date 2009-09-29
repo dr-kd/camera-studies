@@ -15,10 +15,11 @@
 <th>edit</th>
 </tr>
 [% WHILE (s = studies.next) %]
+<tr>
 [% FOREACH col IN cols  %]
-<td>[% s.$col %] </td>
+<td [% IF s.done == 1 %] style="background-color: #ddd" [% END %] >[% s.$col %] </td>
 [% END %]
-<td> <a href="[% c.uri_for(  s.id, 'edit') %]">edit</a><br>
+<td [% IF s.done == 1 %] style="background-color: #ddd" [% END %]>  <a href="[% c.uri_for(  s.id, 'edit') %]">edit</a><br>
 </td>
 </tr>
 [% END %]
