@@ -34,6 +34,12 @@ __PACKAGE__->has_many(
 # Created by DBIx::Class::Schema::Loader v0.04006 @ 2009-09-26 18:43:52
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Xol3p9jyQhi7ruo9pQL6FQ
 
+__PACKAGE__->has_many(
+  "studies_countries",
+  "Camera::Schema::Result::StudiesCountries",
+  { "foreign.countries_id" => "self.id" },
+);
+
 
 # You can replace this text with custom content, and it will be preserved on regeneration
 1;
