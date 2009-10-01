@@ -16,6 +16,11 @@ sub index : Path Args(0) {
     $c->res->redirect('/studies')
 }
 
+sub sqlite : Local {
+    my ($self, $c) = @_;
+    $c->serve_static_file($c->path_to('db/alex.db'));
+}
+
 sub do_404 : Path {
     my ($self, $c) = @_;
     $c->res->status(404);
