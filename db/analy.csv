@@ -1,0 +1,90 @@
+ID,analy_t,analy_n,ID,analy_t,analy_n,
+4,No of locations,,4,Number of Locations,,
+5,Time to first detection,,5,Time to first detection,,
+6,Habitat influence on distribution,,6,Habitat selection,,
+7,n/a,,7,N/A,,
+12,Occupancy,,12,Occupancy,,
+13,Nest survival,,13,Nest survival,,
+15,CMR,,15,Capture-Mark-Resight,,
+16,MNKA,,16,Minimum Number Known Alive,,
+19,Population estimate,,19,Population Estimate,,
+23,bird studies,,23,,,DELETE THIS
+25,Relative frequency of occurence,,25,Index of Relative Abundance,,
+26,Influence of Camera,,26,Influence of Camera,,
+30,Patterns of foraging,,30,Foraging pattern,,
+31,Camera sensitivity,,31,Camera sensitivity,,
+39,Prey Availability,,39,,Prey availability,
+44,Relative Abundance Index (RAI),,44,Index of Relative Abundance,,
+45,Encounter/Capture Rates,,45,Photographic Rate,,
+47,Quality of photos taken,,47,,Quality of Photos,
+52,Capture-recapture Rates,,52,Capture-Mark-Resight,,
+58,Total photos,,58,Raw Number of Photos,,
+59,Animal conservation,,59,,,DELETE THIS
+60,Activity pattern,,60,Activity Patterns,,
+63,water site preference ,,63,Habitat selection,,
+69,"bongo distribution, abundance and conservation",,69,Habitat selection,,
+70,Nesting period and success,,70,Nest survival,,
+72,Existance of Species,,72,Species Presence,,
+73,Capture-Resight,,73,Capture-Mark-Resight,,
+75,Abundance of carnivores,,75,Index of Relative Abundance,,
+77,Species presence,,77,Species Presence,,
+79,total photos,,79,Raw Number of Photos,,
+81,total photos,,81,Raw Number of Photos,
+84,Population density,,84,Population Estimate,
+87,Density dependence,,87,Population Estimate,
+88,Change in population,,88,Population Estimate,
+89,Diversity of predators,,89,Species Presence,
+92,Camera performance,,92,Performance of Camera Equipment,
+93,Distribution of prey,,93,Species Distribution,
+41,Notes,"""pre-marking"" for future Capture Recapture study",41,,Identified Individuals (natural markings)
+65,Note,"A new wildlife recorder, elaborates on the newly developed Lund Electronics vibration sensor-activators",65,,Performance of Equipment
+66,Notes,Animals detected in areas with different human traffic,66,,Habitat selection in relation to human presence
+46,Notes,Average capture rates per 100 trap nights per site,46,,Capture rate per 100 trapnights
+49,Notes,Behavioural time budget,49,,Behavioural time budget
+53,Notes,Calculated capture rate per hour,53,,Capture rate per hour
+17,Notes,Captures per 1000 Trap-nights,17,,Capture rate per 1000 trapnights
+76,Notes,Carnivore interferences,76,,Temporal partitioning between species
+85,Notes,Comparing historical and current distributions of carnivores,85,,Compared historical with current distribution
+95,Notes,Comparison between camera-trapping and cage trapping of small mammals,95,,Comparison of camera traps with other technique(s)
+14,Notes,Comparison between ground and shrub nest predation rates; Identify habitat influence on nest predation,14,,Nest predation monitored in relation to habitat
+43,Notes,Comparison of 2 analysis methods,43,,Comparison of camera traps with other technique(s)
+38,,Comparison of 3 different techniques,38,,Comparison of camera traps with other technique(s)
+50,Notes,Comparison of camera trapping and live trapping,50,,Comparison of camera traps with other technique(s)
+51,Notes,Comparison of protected cameras and non protected cameras,51,,Evaluation of camera protection
+42,Notes,Comparison of the number of bait removal occasions in the two different bait station designs,42,,Cameras used to monitor bait uptake
+54,Notes,Conservation of the lesser one-horned rhino,54,,Species distribution'
+33,Notes,Damage by egg predators,33,,Nest predation monitored
+20,,Determine food items brought to nest,20,,Determine food items brought to nest
+86,Notes,Distribution and spatio-temporal behaviour of sub-adult Eurasian lynx,86,,Distribution and spatio-temporal behaviour
+29,Notes,Effectiveness of using camera traps to find rattlesnakes,29,,Evaluation of cameras as a technique
+96,Notes,Effects of different scents in artificial nest predation,96,,Nest predation monitored in relation to scent
+94,Notes,Evaluation of various methods used to estimate abundance of terrestrial carnivores,94,,Comparison of camera traps with other technique(s)
+37,Notes,Feeding patterns of mountain lions ,37,,Foraging patterns
+34,,Habitat influence on nest predation,34,,Nest predation monitored in relation to habitat
+74,Notes,Habituation of badgers to cameras in comparison to human contact.,74,,Habitutation to cameras
+18,,Identify marked (collared) inviduals,18,,Identified Individuals (collared)
+56,Notes,Important of chipmunks and squirrels as nest predators; nest predator diversity,56,,Nest predation monitored
+83,Notes,Mammal survey using various methods of detection,83,,Comparison of camera traps with other technique(s)
+57,Notes,Measuring overlap of daily activity patterns,57,,Temporal partitioning between species
+67,Notes,Monitoring remote wildlife via the internet,67,,Evaluation of cameras as a technique
+40,Notes,Nesting ecology and behaviour ,40,,Nesting ecology and behaviour
+68,Notes,No analysis is made as these are all just records.,68,,No Analysis
+62,Notes,Number of surviving young,62,,Number of surviving young
+91,Notes,Presence of a morph of an Asiatic golden cat; target photos do not include the normal Asiatic golden cat,91,,Presence of Species
+90,Notes,Rate of predation in riparian buffer-strips,90,,Nest predation monitored
+36,Notes,"Reaction to flash, and whether the animals return to camera",36,,Reaction to flash
+82,Notes,Recording photos of food retrieved by Great tits; problems with food-recorder,82,,Determine food items brought to nest
+55,Notes,Relationships between nest predation and nest density ,55,,Nest predation monitored
+78,,Species feeding on seed / fruit,78,,Species feeding on seed/fruit
+71,Notes,Species identification,71,,Species identification
+48,Notes,Studying diet of Goshawks and Common buzzards via prey remains in nests,48,,Determine food items brought to nest,
+64,Notes,Talks about use of new equipment (video cameras) as new method for tracking wildlife,64,,Evaluation of cameras as a technique,
+61,Notes,The food items retrieved by the Great Tits from the nesting box were recorded.,61,,Determine food items brought to nest,
+80,Notes,camera protection/ equipment testing ,80,,Evaluation of camera protection,
+32,,camera setup,32,,Evaluation of cameras as a technique,
+21,,comparison of 4 different techniques,21,,Comparison of camera traps with other technique(s),
+35,Notes,discusses benefits of using [sensor cameras] for the location of mammals; compares film cameras and digital cameras,35,,Evaluation of cameras as a technique,
+28,,low protection vs high protection areas,28,,Monitor success of interventions,
+24,Notes,"monitoring change in vegetation, erosion, density in the environment",24,,,DELETE THIS
+22,,number of seeds removed by each photographed visitor,22,,Species feeding on seed/fruit,
+27,Notes,whether or not the Yakushima macaque was foraging for figs,27,,Species feeding on seed/fruit,
